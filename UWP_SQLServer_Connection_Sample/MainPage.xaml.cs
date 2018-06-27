@@ -70,7 +70,12 @@ namespace UWP_SQLServer_Connection_Sample
             }
             catch (Exception eSql)
             {
-                Debug.WriteLine("Exception: " + eSql.Message);
+                ContentDialog cd = new ContentDialog();
+                cd.Title = "ERROR!";
+                cd.Content = eSql.Message;
+                cd.PrimaryButtonText = "Close";
+                cd.ShowAsync();
+                //Debug.WriteLine("Exception: " + eSql.Message);
             }
             return null;
         }
