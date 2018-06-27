@@ -22,17 +22,18 @@
                   Margin="20">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal"  >
-                            <TextBlock Text="ID" Margin="8,0" Width="50" Foreground="DarkRed" />
-                            <TextBlock Text="Product description" Width="300" Foreground="DarkRed" />
-                            <TextBlock Text="Packaging" Width="200" Foreground="DarkRed" />
-                            <TextBlock Text="Price" Width="80" Foreground="DarkRed" />
-                            <TextBlock Text="In stock" Width="80" Foreground="DarkRed" />
+                        <StackPanel Orientation="Horizontal"  Background="DarkGreen" Height="36">
+                            <TextBlock Text="ID" Margin="8,0" Width="50" Foreground="White" />
+                            <TextBlock Text="Product description" Width="300" Foreground="White" />
+                            <TextBlock Text="Packaging" Width="200" Foreground="White" />
+                            <TextBlock Text="Price" Width="80" Foreground="White" />
+                            <TextBlock Text="In stock" Width="80" Foreground="White" />
                         </StackPanel>
-                    </DataTemplate>
+                </DataTemplate>
                 </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Product">
+                    <StackPanel>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock Name="ItemId"
                                     Text="{x:Bind ProductCode}"
@@ -47,7 +48,14 @@
                             <TextBlock Text="{x:Bind UnitsInStockString}"
                                    Width="80" />
                         </StackPanel>
-                    </DataTemplate>
+                    <Rectangle Height="1">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{ThemeResource SystemBaseHighColor}"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    </StackPanel>
+                        
+                </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         <!--</RelativePanel>-->
